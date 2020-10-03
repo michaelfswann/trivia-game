@@ -13,6 +13,9 @@ async function getTrivia () {
 
 }
 
+getTrivia()
+
+
 // set questions number to 1 (0 based array)
 
 questionNumber = 0;
@@ -21,6 +24,8 @@ questionNumber = 0;
 
 function displayQuestion () {
     questionString = data.results[questionNumber].question;
+    let questionBeingDisplayed = document.querySelector("#question")
+    questionBeingDisplayed.innerText = questionString;
     answer = data.results[questionNumber].correctAnswer;
 }
 
@@ -39,6 +44,8 @@ function showButton() {
 };
 
 function newGame() {
+
+    displayQuestion();
     showButton()
 };
 
