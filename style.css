@@ -1,4 +1,6 @@
 body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
     background-color: coral;
 }
 
@@ -6,3 +8,35 @@ header {
     text-align: center;
     font-size: 10em;
 }
+
+#question {
+    border: 0.2em solid black;
+    padding: 0.2em;
+    margin: 0.2em;
+    text-align: center;
+    font-size: 5em;
+}
+
+div {
+    display: block;
+}
+
+#button-panel {
+    display: block;
+    border: 0.2em solid black;
+    padding: 0.2em;
+    margin: 0.2em;
+    text-align: center;
+    font-size: 5em;
+}
+
+#new-game-button {
+    align-content: center;
+    display: block;
+}
+
+#true-false-buttons {
+    display: none;
+}
+
+

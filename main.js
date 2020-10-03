@@ -1,4 +1,4 @@
-let data;
+let data, questionNumber, questionString, answer;
 console.log('Hello');
 
 
@@ -12,3 +12,38 @@ async function getTrivia () {
     data = await response.json();
 
 }
+
+// set questions number to 1 (0 based array)
+
+questionNumber = 0;
+
+// create function to display question
+
+function displayQuestion () {
+    questionString = data.results[questionNumber].question;
+    answer = data.results[questionNumber].correctAnswer;
+}
+
+function clickTrue() {
+
+}
+
+
+
+
+function showButton() {
+    let divButtonNewGame = document.getElementById("new-game-button");
+    divButtonNewGame.style.display = "none";
+    let buttonsTrueFalse = document.getElementById("true-false-buttons");
+    buttonsTrueFalse.style.display = "block";
+};
+
+function newGame() {
+    showButton()
+};
+
+let newGameButton = document.querySelector("#new-game");
+
+
+newGameButton.addEventListener('click', newGame);
+ 

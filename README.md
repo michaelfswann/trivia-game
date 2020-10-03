@@ -19,10 +19,10 @@ step 3
     js
 
         build a game function:
-
-            display question
             
-            store and display question number
+            store question number
+
+            store question
             
             store result
             
