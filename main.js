@@ -1,10 +1,15 @@
-let data, questionNumber, questionString, answer;
+let data, questionNumber, questionString, answer, gameScore;
 console.log('Hello');
 
 const divButtonNewGame = document.getElementById("new-game-button");
 const buttonsTrueFalse = document.getElementById("true-false-buttons");
 const questionResults = document.getElementById("result");
-const questionBeingDisplayed = document.querySelector("#question")
+const questionBeingDisplayed = document.querySelector("#question");
+const scorePanel = document.getElementById('scores');
+const buttonNewGame = document.getElementById('new-game');
+
+gameScore = 0;
+questionNumber = 0;
 
 
 
@@ -37,29 +42,46 @@ function displayQuestion () {
 }
 
 function clickTrue() {
+    if (questionNumber === 10) {
+        let divAppContainer = document.getElementById('app-container');
+        divAppContainer.style.display = 'none'
+        alert(`Final Score: ${gameScore} Questions Answered: ${questionNumber}`);
+     } else {
     buttonsTrueFalse.style.display = "none";
     questionResults.style.display = "block";
     if (answer === 'True') {
         questionResults.innerText = 'Correct!'
+        gameScore++
     } else {
         questionResults.innerText = 'Wrong Answer!'
     }
+    buttonNewGame.innerText = 'Next Question'
     divButtonNewGame.style.display = "block";
     questionNumber++
+    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionNumber}`
+    }
 
 }
 
 function clickFalse() {
+    if (questionNumber === 10) {
+        let divAppContainer = document.getElementById('app-container');
+        divAppContainer.style.display = 'none'
+        alert(`Final Score: ${gameScore} Questions Answered: ${questionNumber}`);
+    } else {
     buttonsTrueFalse.style.display = "none";
     questionResults.style.display = "block";
     if (answer === 'False') {
         questionResults.innerText = 'Correct!'
+        gameScore++
     } else {
         questionResults.innerText = 'Wrong Answer!'
     }
+    buttonNewGame.innerText = 'Next Question'
     divButtonNewGame.style.display = "block";
     questionNumber++
-
+    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionNumber}`
+}   
 }
 
 
@@ -92,3 +114,4 @@ trueButton.addEventListener('click', clickTrue);
 const falseButton = document.getElementById('false-button');
 
 falseButton.addEventListener('click', clickFalse);
+

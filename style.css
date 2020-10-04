@@ -51,4 +51,13 @@ div {
     display: none;
 }
 
+#scores {
+    display: block;
+    border: 0.05em solid black;
+    padding: 0.2em;
+    margin: 0.2em;
+    text-align: center;
+    font-size: 2em;
+}
+
 
