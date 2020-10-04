@@ -1,4 +1,4 @@
-let data, questionNumber, questionString, answer, gameScore;
+let data, questionNumber, questionString, answer, gameScore, questionsAnswered;
 console.log('Hello');
 
 const divButtonNewGame = document.getElementById("new-game-button");
@@ -9,7 +9,7 @@ const scorePanel = document.getElementById('scores');
 const buttonNewGame = document.getElementById('new-game');
 
 gameScore = 0;
-questionNumber = 0;
+questionsAnswered = 0;
 
 
 
@@ -42,11 +42,6 @@ function displayQuestion () {
 }
 
 function clickTrue() {
-    if (questionNumber === 10) {
-        let divAppContainer = document.getElementById('app-container');
-        divAppContainer.style.display = 'none'
-        alert(`Final Score: ${gameScore} Questions Answered: ${questionNumber}`);
-     } else {
     buttonsTrueFalse.style.display = "none";
     questionResults.style.display = "block";
     if (answer === 'True') {
@@ -58,17 +53,11 @@ function clickTrue() {
     buttonNewGame.innerText = 'Next Question'
     divButtonNewGame.style.display = "block";
     questionNumber++
-    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionNumber}`
-    }
-
+    questionsAnswered++
+    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionsAnswered}`
 }
 
 function clickFalse() {
-    if (questionNumber === 10) {
-        let divAppContainer = document.getElementById('app-container');
-        divAppContainer.style.display = 'none'
-        alert(`Final Score: ${gameScore} Questions Answered: ${questionNumber}`);
-    } else {
     buttonsTrueFalse.style.display = "none";
     questionResults.style.display = "block";
     if (answer === 'False') {
@@ -80,8 +69,8 @@ function clickFalse() {
     buttonNewGame.innerText = 'Next Question'
     divButtonNewGame.style.display = "block";
     questionNumber++
-    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionNumber}`
-}   
+    questionsAnswered++
+    scorePanel.innerText = `Current Score: ${gameScore} Questions Answered: ${questionsAnswered}`
 }
 
 
@@ -94,10 +83,15 @@ function showButton() {
 };
 
 function newGame() {
+    if (questionsAnswered === 10) {
+        console.log('ending')
+        endGame();
+     } else {
     questionResults.style.display = "none";
     displayQuestion();
     console.log('being called')
     showButton()
+     };
 };
 
 const newGameButton = document.querySelector("#new-game");
@@ -115,3 +109,8 @@ const falseButton = document.getElementById('false-button');
 
 falseButton.addEventListener('click', clickFalse);
 
+function endGame() {
+    let divAppContainer = document.getElementById('app-container');
+        divAppContainer.style.display = 'none'
+        alert(`Final Score: ${gameScore} Questions Answered: ${questionNumber}`);
+};
