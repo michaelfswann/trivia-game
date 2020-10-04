@@ -10,20 +10,28 @@ header {
 }
 
 #question {
-    border: 0.2em solid black;
+    border: 0.05em solid black;
     padding: 0.2em;
     margin: 0.2em;
     text-align: center;
     font-size: 5em;
 }
 
+
 div {
     display: block;
 }
 
+#app-container {
+    border: 0.1em solid black;
+    padding: 0.2em;
+    margin: 0.2em;
+    
+}
+
 #button-panel {
     display: block;
-    border: 0.2em solid black;
+    border: 0.05em solid black;
     padding: 0.2em;
     margin: 0.2em;
     text-align: center;
@@ -36,6 +44,10 @@ div {
 }
 
 #true-false-buttons {
+    display: none;
+}
+
+#result {
     display: none;
 }
 
