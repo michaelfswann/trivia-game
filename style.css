@@ -1,20 +1,20 @@
 body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji", Times, Symbola, Aegyptus, Code2000, Code2001, Code2002, Musica, serif, LastResort;
     font-style: normal;
     background-color: coral;
 }
 
 header {
     text-align: center;
-    font-size: 10em;
+    font-size: 72px;
 }
 
 #question {
-    border: 0.05em solid black;
-    padding: 0.2em;
-    margin: 0.2em;
+    border: 5px solid black;
+    padding: 2px;
+    margin: 2px;
     text-align: center;
-    font-size: 5em;
+    font-size: 24px;
 }
 
 
@@ -23,24 +23,24 @@ div {
 }
 
 #app-container {
-    border: 0.1em solid black;
-    padding: 0.2em;
-    margin: 0.2em;
+    border: 5px solid black;
+    padding: 2px;
+    margin: 2px;
     
 }
 
 #button-panel {
-    display: block;
-    border: 0.05em solid black;
-    padding: 0.2em;
-    margin: 0.2em;
+    display: none;
+    border: 5px solid black;
+    padding: 2px;
+    margin: 2px;
     text-align: center;
-    font-size: 5em;
+    font-size: 24px ;
 }
 
-#new-game-button {
+#new-question-div {
     align-content: center;
-    display: block;
+    display: none;
 }
 
 #true-false-buttons {
@@ -53,11 +53,16 @@ div {
 
 #scores {
     display: block;
-    border: 0.05em solid black;
-    padding: 0.2em;
-    margin: 0.2em;
+    border: 5px solid black;
+    padding: 2px;
+    margin: 2px;
     text-align: center;
-    font-size: 2em;
+    font-size: 24px ;
 }
 
-
+#final-score {
+    display: none;
+    text-align: center;
+    font-size: 72px;
+    vertical-align: 50%;
+}
